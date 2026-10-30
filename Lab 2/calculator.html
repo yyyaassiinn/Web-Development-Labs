@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .container {
+            background-color: black;
+            height: 450px;
+            width: 300px;
+            padding: 20px;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+            margin: 5% auto;
+            border-radius: 10px;
+        }
+        #screen {
+            width: 100%;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background-color: rgb(80, 79, 79);
+        }
+        #result {
+            color: white;
+            text-align: right;
+            width: 100%;
+            padding: 20px;
+            font-size: 30px;
+
+        }
+        button {
+            border: none;
+        }
+        button:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        .number{
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background-color: rgb(80, 79, 79);
+            color: white;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .operator {
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background-color: rgb(198, 89, 11);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #clear {
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background-color: rgb(182, 179, 179);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button_container {
+           display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0px;
+            margin-top: 20px;
+        }
+        #zero {
+            width: 120px;
+            margin: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div id="screen">
+            <output id="result">0</output>
+        </div>
+        <div class="button_container">
+            <button id="clear">AC</button>
+            <button class="number">00</button>
+            <button class="number">%</button>
+            <button class="operator">÷</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">*</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">-</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">+</button>
+            
+            
+        </div>
+        <div class="bottom-bar">
+        <button id="zero" class="number">0</button>
+        <button class="number">.</button>
+        <button class="operator" id="equals">=</button>
+    </div>
+    </div>
+    <script>
+        let result = document.getElementById("result");
+        function display(buttonValue) {
+            return function() {
+                if (buttonValue === "=") {
+                    try {
+                        result.textContent = eval(result.textContent);
+                    } catch (error) {
+                        result.textContent = "Error";
+                    }
+                } else if (buttonValue === "AC") {
+                    result.textContent = "0";
+                }
+                else if (result.textContent === "0") {
+                    result.textContent = buttonValue;
+                } else {
+                    result.textContent += buttonValue;
+                }
+                
+            };
+            
+        }
+        const numberButtons = document.querySelectorAll(".button_container button, .bottom-bar button");
+
+        numberButtons.forEach(function (button) {
+            button.addEventListener("click", display(button.textContent));
+        });
+    </script>
+</body>
+</html>
