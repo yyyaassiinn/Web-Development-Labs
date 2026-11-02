@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <script type="module" src="script.js"></script>
+
+    <style>
+        /* General styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Main container */
+        .todo-container {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        /* Input section */
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #6c63ff;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .add-btn {
+            background: #6c63ff;
+            color: white;
+            padding: 12px 18px;
+        }
+
+        .add-btn:hover {
+            background: #554bd8;
+        }
+
+        /* Task list */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        li span {
+            flex: 1;
+            overflow-wrap: anywhere;
+            color: #444;
+        }
+
+        /* Completed tasks */
+        li.completed span {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        li input[type="checkbox"] {
+            flex: none;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            accent-color: #6c63ff;
+        }
+
+        .delete-btn {
+            background: #ffe8e8;
+            color: #e04444;
+            padding: 7px 10px;
+        }
+
+        .delete-btn:hover {
+            background: #ffd2d2;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Organize your day, one task at a time.</p>
+
+        <div class="input-container">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a new task..."
+            >
+
+            <button class="add-btn" id="addTaskBtn">
+                Add
+            </button>
+        </div>
+
+        <ul id="taskList">
+
+            <li>
+                <input type="checkbox">
+                <span>Study HTML and CSS</span>
+                <button class="delete-btn">Delete</button>
+            </li>
+
+            <li>
+                <input type="checkbox">
+                <span>Complete assignments</span>
+                <button class="delete-btn">Delete</button>
+            </li>
+
+            <li>
+                <input type="checkbox">
+                <span>Practice programming</span>
+                <button class="delete-btn">Delete</button>
+            </li>
+
+        </ul>
+
+        <p class="footer">Stay focused. Get things done!</p>
+
+    </div>
+
+</body>
+</html>
