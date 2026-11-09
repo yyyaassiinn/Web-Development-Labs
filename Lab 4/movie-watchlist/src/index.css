@@ -1,0 +1,120 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #141414;
+  color: white;
+}
+
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  color: #f5d1f5;
+}
+
+.movie-form {
+  display: flex;
+  gap: 10px;
+}
+
+.movie-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+.movie-form button {
+  background: #f5d1f5;
+  font-weight: bold;
+}
+.movie-form button:hover {
+  transform: translateY(-4px);
+  background-color: #f5a0fc;
+}
+
+.movie-stats {
+  margin: 25px 0;
+}
+
+.movie-card {
+  background: #FFFF;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background: #d93636;
+  color: white;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.star-btn {
+  background: transparent;
+  font-size: 23px;
+  padding: 3px;
+}
+
+.emoji-rating {
+  font-size: 20px;
+  min-height: 24px;
+}
+
+.movie-card textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.empty-message {
+  text-align: center;
+  color: #aaa;
+  margin-top: 40px;
+}
+
+@media (max-width: 550px) {
+  .movie-form {
+    flex-direction: column;
+  }
+
+  .rating {
+    flex-wrap: wrap;
+  }
+}
